@@ -2,6 +2,7 @@ import os
 from flask import Flask, render_template,request,redirect,url_for
 from flask_pymongo import PyMongo
 
+
 app = Flask(__name__)
 app.config["MONGO_URI"] = os.environ.get('MONGO_URI')
 app.config['SECRET_KEY'] = 'secret'
@@ -41,6 +42,11 @@ def delete():
         return redirect(url_for('find'))
     return render_template('delete.html')
 
+@app.route('/sort')
+def sort():
+    user = mongo.db.users
+    sort_results=''
+    return render_template('sort.html', user=user, sort_results=sort_results)
 
 
 
