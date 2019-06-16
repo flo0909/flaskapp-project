@@ -2,6 +2,19 @@
 {% block content %}
 <div class='jumbotron'>
     <h1>Home page</h1>
+
+    <div class="landing_upper_text">
+        <em>Ready to cook?</em>
+  </div>
+
+  <div class="landing_center_text">
+           <a href="{{url_for('find')}}" class="btn btn-lg active landingpage_button" role="button" aria-pressed="true">Discover...</a>
+           <p class="bottom_text" ><em>Amazing recipes inside !</em></p>
+           <p class="bottom_text" ><em>Share  your favourite recipes!</em></p>  
+      </div>
+
+ </div>
+ 
 </div>
 
     {% endblock %}

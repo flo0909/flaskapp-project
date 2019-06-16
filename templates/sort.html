@@ -3,9 +3,10 @@
 <div class="jumbotron">
 
     <h1>Sort page</h1>
-
-
-
+{{user}}
+{% for user in user.find({})%}
+<br><h2>Recipe Name:{{user.Recipe_name }}</h2>
+{% endfor %}
 </div>
 
 {% endblock %}

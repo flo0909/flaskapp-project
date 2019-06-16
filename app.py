@@ -14,6 +14,8 @@ mongo = PyMongo(app)
 def index():
 	return render_template('index.html', user=mongo.db.mydb.find())
 
+    
+
 
 @app.route('/add', methods=['GET', 'POST'])
 def add():
