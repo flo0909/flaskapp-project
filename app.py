@@ -13,6 +13,24 @@ mongo = PyMongo(app)
 def index():
 	return render_template('index.html', user=mongo.db.mydb.find())
 
+
+@app.route('/add')
+def add():
+    return render_template('add.html')
+
+@app.route('/find')
+def find():
+
+    return render_template('find.html')
+
+@app.route('/delete')
+def delete():
+ 
+    return render_template('delete.html')
+
+
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
