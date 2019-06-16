@@ -21,7 +21,8 @@ def add():
     user = mongo.db.users
     if request.method == 'POST':
         Recipe_name = request.form['Recipe_name']
-        user.insert_one({'Recipe_name': Recipe_name})
+        Ingredients = request.form['Ingredients']
+        user.insert_one({'Recipe_name': Recipe_name ,'Ingredients': [Ingredients]})
     return render_template('add.html')
 
 @app.route('/find')
@@ -42,12 +43,15 @@ def update(name):
     Recipe_name = ''
     user4 = ''
     urecipe=''
+    uingr=''
+    Ingredients=''
 
     if request.method == 'POST':
-        Recipe_name = request.form['urecipe']    
+        Recipe_name = request.form['urecipe'] 
+        Ingredients = request.form['uingr']   
         user.update({'Recipe_name':name } , {'$set':{'Recipe_name': Recipe_name}})
         return redirect(url_for('find'))
-    return render_template('update.html', urecipe=urecipe, name=name, Recipe_name=Recipe_name, user=user, user4=user4)
+    return render_template('update.html', urecipe=urecipe, name=name, Recipe_name=Recipe_name, user=user, user4=user4, Ingredients=Ingredients,uingr=uingr )
 
 
 @app.route('/results/')

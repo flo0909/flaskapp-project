@@ -6,6 +6,7 @@
 
 {% for user in user.find({})%}
 <br><h2>Recipe Name:{{user.Recipe_name }}</h2>
+<h4><strong>Ingredients:</strong>{{user.Ingredients[0]}}</h4>
 {% endfor %}
 </div>
 

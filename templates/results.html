@@ -6,6 +6,7 @@
     <br>
     <h1>{{name}}</h1>
     <h2>Recipe_name:{{user.find_one({"Recipe_name":name }).Recipe_name}}</h2>
+    <h2>Ingredients:{{user.find_one({"Recipe_name":name }).Ingredients[0]}}</h2>
 
     <a  class="btn updt"  href="/update/{{user.find_one({'Recipe_name':name }).Recipe_name}}"><h2>Update</h2></a>
     <a  class="btn delete" id="delete" href="/recipe/{{user.find_one({'Recipe_name':name }).Recipe_name}}"><h2>Delete</h2></a>
