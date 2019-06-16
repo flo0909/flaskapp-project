@@ -13,7 +13,6 @@ mongo = PyMongo(app)
 @app.route('/index.html')
 def index():
 	return render_template('index.html', user=mongo.db.mydb.find())
-
     
 
 
@@ -35,14 +34,45 @@ def find():
 
 
 
-@app.route('/delete', methods=['GET', 'POST'])
-def delete():
+@app.route('/update/')
+@app.route('/update/<name>', methods=['GET','POST'])
+def update(name):
+   
     user = mongo.db.users
+    Recipe_name = ''
+    user4 = ''
+    urecipe=''
+
     if request.method == 'POST':
-        Recipe_name = request.form['Recipe_name']
-        user.delete_one({'Recipe_name': Recipe_name})
+        Recipe_name = request.form['urecipe']    
+        user.update({'Recipe_name':name } , {'$set':{'Recipe_name': Recipe_name}})
         return redirect(url_for('find'))
-    return render_template('delete.html')
+    return render_template('update.html', urecipe=urecipe, name=name, Recipe_name=Recipe_name, user=user, user4=user4)
+
+
+@app.route('/results/')
+@app.route('/results/<name>')
+def results(name=None):
+    users = mongo.db
+    user = mongo.db.users
+    user2=user.find_one()
+    user3=user.find()  
+    return render_template('results.html', name=name, user2=user2, user3=user3, user=user, users=users)
+
+
+@app.route('/recipe/')
+@app.route('/recipe/<name>', methods=['GET','POST'])
+def recipe(name=None):
+    users = mongo.db
+    user = mongo.db.users
+    user2=user.find_one()
+    user3=user.find()
+    user4 = ''
+    if request.method == 'GET':
+        user4=user.delete_one({'Recipe_name': name})
+        return render_template('find.html')
+    return render_template('recipe.html', name=name, user2=user2, user3=user3, user=user, users=users, user4=user4)
+
 
 @app.route('/sort')
 def sort():
