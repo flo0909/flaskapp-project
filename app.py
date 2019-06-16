@@ -14,18 +14,31 @@ def index():
 	return render_template('index.html', user=mongo.db.mydb.find())
 
 
-@app.route('/add')
+@app.route('/add', methods=['GET', 'POST'])
 def add():
+    user = mongo.db.users
+    if request.method == 'POST':
+        Recipe_name = request.form['Recipe_name']
+        user.insert_one({'Recipe_name': Recipe_name})
     return render_template('add.html')
 
 @app.route('/find')
 def find():
+    user = mongo.db.users
+    user2=user.find_one()
+    user3=user.find()
+    
+    return render_template('find.html',user2=user2,user3=user3, user=user)
 
-    return render_template('find.html')
 
-@app.route('/delete')
+
+@app.route('/delete', methods=['GET', 'POST'])
 def delete():
- 
+    user = mongo.db.users
+    if request.method == 'POST':
+        Recipe_name = request.form['Recipe_name']
+        user.delete_one({'Recipe_name': Recipe_name})
+        return redirect(url_for('find'))
     return render_template('delete.html')
 
 

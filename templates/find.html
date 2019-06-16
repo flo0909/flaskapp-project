@@ -1,7 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class='jumbotron'>
-    <h1>find page</h1>
-</div>
 
-    {% endblock %}
+<div class="jumbotron">
+    <h1>Find page</h1>
+{% for user in user3%}
+<h1>{{user.Recipe_name}}</h1>
+  </div>      
+         
+</div>
+{%endfor%}
+
+{% endblock %}
