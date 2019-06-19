@@ -25,11 +25,14 @@
                        <label for="formGroupExampleInput">Update Credits to:</label>
                        <input type="url" name="u_credits_to" class="form-control" id="formGroupExampleInput" placeholder="{{user.find_one({'Recipe_name':name }).Details.Credits_to}}">
                         <br>
-                        <label for="formGroupExampleInput">Update Cooking Time :</label>
+                        <label for="formGroupExampleInput">Update Cooking Time to :</label>
                         <input type="text" name="u_cooking_time_minutes" class="form-control" id="formGroupExampleInput" placeholder="{{user.find_one({'Recipe_name':name }).Cooking_time_minutes}}">
                          <br>
-                   <label for="formGroupExampleInput">Update ingredients:</label>
+                   <label for="formGroupExampleInput">Update ingredients To:</label>
                    <input type="text" name="u_ingr" class="form-control" id="formGroupExampleInput" placeholder="{{user.find_one({'Recipe_name':name }).Ingredients[0]}}">
+                   <br>
+                   <label for="exampleFormControlTextarea1">Update Description To:</label>
+                   <textarea class="form-control" name="u_description" id="exampleFormControlTextarea1" rows="5"></textarea>
                    <br>
                    <input type="submit">
 

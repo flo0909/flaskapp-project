@@ -5,7 +5,7 @@
     <br>
     <br>
     <h1>{{name}}</h1>
-    <h2>Recipe_name: {{user.find_one({"Recipe_name":name }).Recipe_name}}</h2>
+    <h2>Recipe Name: {{user.find_one({"Recipe_name":name }).Recipe_name}}</h2>
     <h2>Suitable For: {{user.find_one({"Recipe_name":name }).Details.Suitable_for}}</h2>
     <h2>Serves As: {{user.find_one({"Recipe_name":name }).Details.Serves_as}}</h2>
     <h2>Allergens: {{user.find_one({"Recipe_name":name }).Details.Allergens}}</h2>
@@ -13,6 +13,7 @@
     <h2>Credits To: {{user.find_one({"Recipe_name":name }).Details.Credits_to}}</h2>
     <h2>Cooking Time Minutes : {{user.find_one({"Recipe_name":name }).Cooking_time_minutes}}</h2>
     <h2>Ingredients: {{user.find_one({"Recipe_name":name }).Ingredients[0]}}</h2>
+    <h2>Description : {{user.find_one({"Recipe_name":name }).Description}}</h2>
 
     <a  class="btn updt"  href="/update/{{user.find_one({'Recipe_name':name }).Recipe_name}}"><h2>Update</h2></a>
     <a  class="btn delete" id="delete" href="/recipe/{{user.find_one({'Recipe_name':name }).Recipe_name}}"><h2>Delete</h2></a>

@@ -13,6 +13,7 @@
     <h2>Credits To : {{user.find_one({"Recipe_name":name }).Details.Credits_to}}</h2>
     <h2>Cooking Time Minutes : {{user.find_one({"Recipe_name":name }).Cooking_time_minutes}}</h2>
     <h2>Ingredients:{{user.find_one({"Recipe_name":name }).Ingredients[0]}}</h2>
+    <h2>Description : {{user.find_one({"Recipe_name":name }).Description}}</h2>
 <a  class="btn recipe" action="{{user4}}" href="find"><h1>Delete</h1></a>
 
 </div>
