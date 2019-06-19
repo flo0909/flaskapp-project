@@ -7,7 +7,7 @@
 
 <button type="button" id="Allergens" class="btn btn-primary btn-lg "><h2>No Allergens</h2></button>
 <div id="hideOne" class="hide">
-{% for user in user.find({"Details.Allergens":{"$eq":"Contains dairy", "$exists":true}})%}
+{% for user in user.find({"Details.Allergens":{"$eq":"None", "$exists":true}})%}
 <br>
 <h3><strong>Recipe Name: </strong>{{user.Recipe_name }}</h3>
 <h4><strong>Suitable For: </strong>{{user.Details.Suitable_for}}</h4>
@@ -21,5 +21,20 @@
 {% endfor %}
 </div>
 
+<button type="button" id="Portions_served" class="btn btn-primary btn-lg "><h2>Many portions</h2></button>
+<div id="hideTwo" class="hide">
+{% for user in user.find({"Details.Portions_served":{"$ne":"one", "$exists":true}})%}
+<br>
+<h3><strong>Recipe Name: </strong>{{user.Recipe_name }}</h3>
+<h4><strong>Suitable For: </strong>{{user.Details.Suitable_for}}</h4>
+<h4><strong>Serves As: </strong>{{user.Details.Serves_as}}</h4>
+<h4><strong>Allergens: </strong>{{user.Details.Allergens}}</h4>
+<h4><strong>Portions Served: </strong>{{user.Details.Portions_served}}</h4>
+<h4><strong>Credits To: </strong>{{user.Details.Credits_to}}</h4>
+<h4><strong>Cooking Time Minutes: </strong>{{user.Cooking_time_minutes}}</h4>
+<h4><strong>Ingredients: </strong>{{user.Ingredients[0]}}</h4>
+<h4><strong>Description: </strong>{{user.Description}}</h4>
+{% endfor %}
+</div>
 
 {% endblock %}
