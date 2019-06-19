@@ -16,6 +16,9 @@
                     <label for="formGroupExampleInput">Update Serves As to:</label>
                     <input type="text" name="uservesas" class="form-control" id="formGroupExampleInput" placeholder="{{user.find_one({'Recipe_name':name }).Details.Serves_as}}">
                      <br>
+                     <label for="formGroupExampleInput">Update Allergens to:</label>
+                     <input type="text" name="uallergens" class="form-control" id="formGroupExampleInput" placeholder="{{user.find_one({'Recipe_name':name }).Details.Allergens}}">
+                      <br>
                    <label for="formGroupExampleInput">Update ingredients:</label>
                    <input type="text" name="uingr" class="form-control" id="formGroupExampleInput" placeholder="{{user.find_one({'Recipe_name':name }).Ingredients[0]}}">
                    <br>

@@ -25,6 +25,7 @@ def add():
         Recipe_name = request.form['Recipe_name']
         Suitable_for = request.form['Suitable_for']
         Serves_as = request.form['Serves_as']
+        Allergens = request.form['Allergens']
 
         Ingredients = request.form['Ingredients']
         user.insert_one(
@@ -33,6 +34,7 @@ def add():
                 'Details':{
                     'Suitable_for': Suitable_for ,
                     'Serves_as': Serves_as ,
+                    'Allergens': Allergens ,
                 },
                 'Ingredients': [Ingredients]
                 }
@@ -62,18 +64,23 @@ def update(name):
     Ingredients=''
     usuitablefor=''
     uservesas=''
+    uallergens=''
 
     if request.method == 'POST':
         Recipe_name = request.form['urecipe']
         Suitable_for = request.form['usuitablefor'] 
-        Serves_as = request.form['uservesas']  
+        Serves_as = request.form['uservesas']
+        Allergens = request.form['uallergens']   
+
+
         Ingredients = request.form['uingr']   
         user.update({'Recipe_name':name } , {'$set':{'Recipe_name': Recipe_name}})
         user.update({'Recipe_name':name } , {'$set':{'Details':{ 'Suitable_for': Suitable_for } }})
         user.update({'Recipe_name':name } , {'$set':{'Details':{ 'Serves_as': Serves_as } }})
+        user.update({'Recipe_name':name } , {'$set':{'Details':{ 'Allergens': Allergens } }})
         user.update({ 'Recipe_name':Recipe_name} , {'$set':{'Ingredients': [Ingredients]}})
         return redirect(url_for('find'))
-    return render_template('update.html', uservesas=uservesas , usuitablefor=usuitablefor  ,urecipe=urecipe, name=name, Recipe_name=Recipe_name, user=user, user4=user4, Ingredients=Ingredients,uingr=uingr )
+    return render_template('update.html',  uallergens=uallergens  , uservesas=uservesas , usuitablefor=usuitablefor  ,urecipe=urecipe, name=name, Recipe_name=Recipe_name, user=user, user4=user4, Ingredients=Ingredients,uingr=uingr )
 
 
 @app.route('/results/')
