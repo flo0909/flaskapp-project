@@ -24,6 +24,7 @@ def add():
     if request.method == 'POST':
         Recipe_name = request.form['Recipe_name']
         Suitable_for = request.form['Suitable_for']
+        Serves_as = request.form['Serves_as']
 
         Ingredients = request.form['Ingredients']
         user.insert_one(
@@ -31,6 +32,7 @@ def add():
                 'Recipe_name': Recipe_name ,
                 'Details':{
                     'Suitable_for': Suitable_for ,
+                    'Serves_as': Serves_as ,
                 },
                 'Ingredients': [Ingredients]
                 }
@@ -65,7 +67,7 @@ def update(name):
         Suitable_for = request.form['usuitablefor']  
         Ingredients = request.form['uingr']   
         user.update({'Recipe_name':name } , {'$set':{'Recipe_name': Recipe_name}})
-        user.update({'Recipe_name':name } , {'$set':{'Details':{ 'Suitable_for': Suitable_for  }  }})
+        user.update({'Recipe_name':name } , {'$set':{'Details':{ 'Suitable_for': Suitable_for } }})
         user.update({ 'Recipe_name':Recipe_name} , {'$set':{'Ingredients': [Ingredients]}})
         return redirect(url_for('find'))
     return render_template('update.html', usuitablefor=usuitablefor  ,urecipe=urecipe, name=name, Recipe_name=Recipe_name, user=user, user4=user4, Ingredients=Ingredients,uingr=uingr )
