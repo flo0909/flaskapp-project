@@ -10,9 +10,13 @@
                    <label for="formGroupExampleInput">Update the recipe to:</label>
                    <input type="text" name="urecipe" class="form-control" id="formGroupExampleInput" placeholder="{{name}}">
                    <br>
+                   <label for="formGroupExampleInput">Update Suitable For to:</label>
+                   <input type="text" name="usuitablefor" class="form-control" id="formGroupExampleInput" placeholder="{{user.find_one({'Recipe_name':name }).Details.Suitable_for}}">
+                    <br>
                    <label for="formGroupExampleInput">Update ingredients:</label>
                    <input type="text" name="uingr" class="form-control" id="formGroupExampleInput" placeholder="{{user.find_one({'Recipe_name':name }).Ingredients[0]}}">
                    <br>
+                   <input type="submit">
 
         </form>
 </div>

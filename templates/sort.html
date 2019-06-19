@@ -5,8 +5,10 @@
     <h1>Sort page</h1>
 
 {% for user in user.find({})%}
-<br><h2>Recipe Name:{{user.Recipe_name }}</h2>
-<h4><strong>Ingredients:</strong>{{user.Ingredients[0]}}</h4>
+<br>
+<h3><strong>Recipe Name: </strong>{{user.Recipe_name }}</h3>
+<h4><strong>Suitable For: </strong>{{user.Details.Suitable_for}}</h4>
+<h4><strong>Ingredients: </strong>{{user.Ingredients[0]}}</h4>
 {% endfor %}
 </div>
 

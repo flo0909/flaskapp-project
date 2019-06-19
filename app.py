@@ -4,7 +4,9 @@ from flask_pymongo import PyMongo
 
 
 app = Flask(__name__)
+
 app.config["MONGO_URI"] = os.environ.get('MONGO_URI')
+
 app.config['SECRET_KEY'] = 'secret'
 
 mongo = PyMongo(app)
@@ -21,8 +23,19 @@ def add():
     user = mongo.db.users
     if request.method == 'POST':
         Recipe_name = request.form['Recipe_name']
+        Suitable_for = request.form['Suitable_for']
+
         Ingredients = request.form['Ingredients']
-        user.insert_one({'Recipe_name': Recipe_name ,'Ingredients': [Ingredients]})
+        user.insert_one(
+            {
+                'Recipe_name': Recipe_name ,
+                'Details':{
+                    'Suitable_for': Suitable_for ,
+                },
+                'Ingredients': [Ingredients]
+                }
+                )
+        return redirect(url_for('find'))
     return render_template('add.html')
 
 @app.route('/find')
@@ -45,13 +58,17 @@ def update(name):
     urecipe=''
     uingr=''
     Ingredients=''
+    usuitablefor=''
 
     if request.method == 'POST':
-        Recipe_name = request.form['urecipe'] 
+        Recipe_name = request.form['urecipe']
+        Suitable_for = request.form['usuitablefor']  
         Ingredients = request.form['uingr']   
         user.update({'Recipe_name':name } , {'$set':{'Recipe_name': Recipe_name}})
+        user.update({'Recipe_name':name } , {'$set':{'Details':{ 'Suitable_for': Suitable_for  }  }})
+        user.update({ 'Recipe_name':Recipe_name} , {'$set':{'Ingredients': [Ingredients]}})
         return redirect(url_for('find'))
-    return render_template('update.html', urecipe=urecipe, name=name, Recipe_name=Recipe_name, user=user, user4=user4, Ingredients=Ingredients,uingr=uingr )
+    return render_template('update.html', usuitablefor=usuitablefor  ,urecipe=urecipe, name=name, Recipe_name=Recipe_name, user=user, user4=user4, Ingredients=Ingredients,uingr=uingr )
 
 
 @app.route('/results/')
