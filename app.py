@@ -26,6 +26,7 @@ def add():
         Suitable_for = request.form['Suitable_for']
         Serves_as = request.form['Serves_as']
         Allergens = request.form['Allergens']
+        Portions_served = request.form['Portions_served']
 
         Ingredients = request.form['Ingredients']
         user.insert_one(
@@ -35,6 +36,7 @@ def add():
                     'Suitable_for': Suitable_for ,
                     'Serves_as': Serves_as ,
                     'Allergens': Allergens ,
+                    'Portions_served': Portions_served,
                 },
                 'Ingredients': [Ingredients]
                 }
@@ -59,28 +61,31 @@ def update(name):
     user = mongo.db.users
     Recipe_name = ''
     user4 = ''
-    urecipe=''
-    uingr=''
-    Ingredients=''
-    usuitablefor=''
-    uservesas=''
-    uallergens=''
+    u_recipe=''
+    u_ingr=''
+    u_suitablefor=''
+    u_servesas=''
+    u_allergens=''
+    u_portions_served=''
 
     if request.method == 'POST':
-        Recipe_name = request.form['urecipe']
-        Suitable_for = request.form['usuitablefor'] 
-        Serves_as = request.form['uservesas']
-        Allergens = request.form['uallergens']   
+        Recipe_name = request.form['u_recipe']
+        Suitable_for = request.form['u_suitablefor'] 
+        Serves_as = request.form['u_servesas']
+        Allergens = request.form['u_allergens']   
+        Portions_served = request.form['u_portions_served'] 
 
+        Ingredients = request.form['u_ingr']   
 
-        Ingredients = request.form['uingr']   
         user.update({'Recipe_name':name } , {'$set':{'Recipe_name': Recipe_name}})
         user.update({'Recipe_name':name } , {'$set':{'Details':{ 'Suitable_for': Suitable_for } }})
         user.update({'Recipe_name':name } , {'$set':{'Details':{ 'Serves_as': Serves_as } }})
         user.update({'Recipe_name':name } , {'$set':{'Details':{ 'Allergens': Allergens } }})
+        user.update({'Recipe_name':name } , {'$set':{'Details':{ 'Portions_served': Portions_served } }})
+
         user.update({ 'Recipe_name':Recipe_name} , {'$set':{'Ingredients': [Ingredients]}})
         return redirect(url_for('find'))
-    return render_template('update.html',  uallergens=uallergens  , uservesas=uservesas , usuitablefor=usuitablefor  ,urecipe=urecipe, name=name, Recipe_name=Recipe_name, user=user, user4=user4, Ingredients=Ingredients,uingr=uingr )
+    return render_template('update.html', u_portions_served=u_portions_served ,u_allergens=u_allergens  , u_servesas=u_servesas , u_suitablefor=u_suitablefor  ,u_recipe=u_recipe, name=name, Recipe_name=Recipe_name, user=user, user4=user4, Ingredients=Ingredients,u_ingr=u_ingr )
 
 
 @app.route('/results/')

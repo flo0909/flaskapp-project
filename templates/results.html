@@ -9,6 +9,7 @@
     <h2>Suitable For: {{user.find_one({"Recipe_name":name }).Details.Suitable_for}}</h2>
     <h2>Serves As: {{user.find_one({"Recipe_name":name }).Details.Serves_as}}</h2>
     <h2>Allergens: {{user.find_one({"Recipe_name":name }).Details.Allergens}}</h2>
+    <h2>Portions Served: {{user.find_one({"Recipe_name":name }).Details.Portions_served}}</h2>
     <h2>Ingredients: {{user.find_one({"Recipe_name":name }).Ingredients[0]}}</h2>
 
     <a  class="btn updt"  href="/update/{{user.find_one({'Recipe_name':name }).Recipe_name}}"><h2>Update</h2></a>
