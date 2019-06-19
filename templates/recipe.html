@@ -7,6 +7,7 @@
     <h1>{{name}}</h1>
     <h2>Recipe_name:{{user.find_one({"Recipe_name":name }).Recipe_name}}</h2>
     <h2>Suitable For: {{user.find_one({"Recipe_name":name }).Details.Suitable_for}}</h2>
+    <h2>Serves As: {{user.find_one({"Recipe_name":name }).Details.Serves_as}}</h2>
     <h2>Ingredients:{{user.find_one({"Recipe_name":name }).Ingredients[0]}}</h2>
 <a  class="btn recipe" action="{{user4}}" href="find"><h1>Delete</h1></a>
 

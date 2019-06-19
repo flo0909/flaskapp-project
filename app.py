@@ -61,16 +61,19 @@ def update(name):
     uingr=''
     Ingredients=''
     usuitablefor=''
+    uservesas=''
 
     if request.method == 'POST':
         Recipe_name = request.form['urecipe']
-        Suitable_for = request.form['usuitablefor']  
+        Suitable_for = request.form['usuitablefor'] 
+        Serves_as = request.form['uservesas']  
         Ingredients = request.form['uingr']   
         user.update({'Recipe_name':name } , {'$set':{'Recipe_name': Recipe_name}})
         user.update({'Recipe_name':name } , {'$set':{'Details':{ 'Suitable_for': Suitable_for } }})
+        user.update({'Recipe_name':name } , {'$set':{'Details':{ 'Serves_as': Serves_as } }})
         user.update({ 'Recipe_name':Recipe_name} , {'$set':{'Ingredients': [Ingredients]}})
         return redirect(url_for('find'))
-    return render_template('update.html', usuitablefor=usuitablefor  ,urecipe=urecipe, name=name, Recipe_name=Recipe_name, user=user, user4=user4, Ingredients=Ingredients,uingr=uingr )
+    return render_template('update.html', uservesas=uservesas , usuitablefor=usuitablefor  ,urecipe=urecipe, name=name, Recipe_name=Recipe_name, user=user, user4=user4, Ingredients=Ingredients,uingr=uingr )
 
 
 @app.route('/results/')
