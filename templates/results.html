@@ -11,6 +11,7 @@
     <h2>Allergens: {{user.find_one({"Recipe_name":name }).Details.Allergens}}</h2>
     <h2>Portions Served: {{user.find_one({"Recipe_name":name }).Details.Portions_served}}</h2>
     <h2>Credits To: {{user.find_one({"Recipe_name":name }).Details.Credits_to}}</h2>
+    <h2>Cooking Time Minutes : {{user.find_one({"Recipe_name":name }).Cooking_time_minutes}}</h2>
     <h2>Ingredients: {{user.find_one({"Recipe_name":name }).Ingredients[0]}}</h2>
 
     <a  class="btn updt"  href="/update/{{user.find_one({'Recipe_name':name }).Recipe_name}}"><h2>Update</h2></a>
