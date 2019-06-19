@@ -67,6 +67,7 @@ def update(name):
     u_servesas=''
     u_allergens=''
     u_portions_served=''
+    Ingredients=''
 
     if request.method == 'POST':
         Recipe_name = request.form['u_recipe']
