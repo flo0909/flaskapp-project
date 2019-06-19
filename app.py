@@ -28,7 +28,7 @@ def add():
         Allergens = request.form['Allergens']
         Portions_served = request.form['Portions_served']
         Credits_to = request.form['Credits_to']
-
+        Cooking_time_minutes = request.form['Cooking_time_minutes']
         Ingredients = request.form['Ingredients']
         user.insert_one(
             {
@@ -40,6 +40,7 @@ def add():
                     'Portions_served': Portions_served ,
                     'Credits_to': Credits_to , 
                 },
+                'Cooking_time_minutes': int(Cooking_time_minutes),
                 'Ingredients': [Ingredients]
                 }
                 )
@@ -71,6 +72,7 @@ def update(name):
     u_portions_served=''
     u_credits_to=''
     Ingredients=''
+    u_cooking_time_minutes=''
 
     if request.method == 'POST':
         Recipe_name = request.form['u_recipe']
@@ -78,7 +80,8 @@ def update(name):
         Serves_as = request.form['u_servesas']
         Allergens = request.form['u_allergens']   
         Portions_served = request.form['u_portions_served'] 
-        Credits_to = request.form['u_credits_to']  
+        Credits_to = request.form['u_credits_to'] 
+        Cooking_time_minutes = request.form['u_cooking_time_minutes']  
 
         Ingredients = request.form['u_ingr']   
 
@@ -88,10 +91,11 @@ def update(name):
         user.update({'Recipe_name':name } , {'$set':{'Details':{ 'Allergens': Allergens } }})
         user.update({'Recipe_name':name } , {'$set':{'Details':{ 'Portions_served': Portions_served } }})
         user.update({'Recipe_name':name } , {'$set':{'Details':{ 'Credits_to': Credits_to } }})
+        user.update({'Recipe_name':name } , {'$set':{ 'Cooking_time_minutes': Cooking_time_minutes }})
 
         user.update({ 'Recipe_name':Recipe_name} , {'$set':{'Ingredients': [Ingredients]}})
         return redirect(url_for('find'))
-    return render_template('update.html', u_credits_to=u_credits_to ,u_portions_served=u_portions_served ,u_allergens=u_allergens  , u_servesas=u_servesas , u_suitablefor=u_suitablefor  ,u_recipe=u_recipe, name=name, Recipe_name=Recipe_name, user=user, user4=user4, Ingredients=Ingredients,u_ingr=u_ingr )
+    return render_template('update.html', u_credits_to=u_credits_to , u_cooking_time_minutes=u_cooking_time_minutes,u_portions_served=u_portions_served ,u_allergens=u_allergens  , u_servesas=u_servesas , u_suitablefor=u_suitablefor  ,u_recipe=u_recipe, name=name, Recipe_name=Recipe_name, user=user, user4=user4, Ingredients=Ingredients,u_ingr=u_ingr )
 
 
 @app.route('/results/')
