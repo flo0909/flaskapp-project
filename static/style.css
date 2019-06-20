@@ -6,12 +6,7 @@ body{
     background-size: cover;
 
 }
-.hide{
-    display:none;
-}
-.show{
-    display:block;
-}
+
 .card{
     opacity: 0.96;
 }
