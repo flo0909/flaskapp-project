@@ -25,6 +25,7 @@ Another link on the navbar is "Categories Page" where the user can find the cate
  Prassing on any button will give the user on the same page, a full description of the recipe within the category provided.
 
 Code:
+
 **Python:**
 I have used for loops and Python conditionals along with Jinja2 for templating. Jinja2 templating was particularly useful for structuring the project aspect.
 
