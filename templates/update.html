@@ -1,43 +1,43 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} 
 {% block content %}
 <div class="jumbotron">
-        
-<h1>{{name}}</h1>
-     
-      <!--Recipe update form-->
-        <form method="POST"  >
-                <div class="form-group col-lg-6">
-                   <label for="formGroupExampleInput">Update the recipe to:</label>
-                   <input type="text" name="u_recipe" class="form-control" id="formGroupExampleInput" placeholder="{{name}}">
-                   <br>
-                   <label for="formGroupExampleInput">Update Suitable For to:</label>
-                   <input type="text" name="u_suitablefor" class="form-control" id="formGroupExampleInput" placeholder="{{user.find_one({'Recipe_name':name }).Details.Suitable_for}}">
-                    <br>
-                    <label for="formGroupExampleInput">Update Serves As to:</label>
-                    <input type="text" name="u_servesas" class="form-control" id="formGroupExampleInput" placeholder="{{user.find_one({'Recipe_name':name }).Details.Serves_as}}">
-                     <br>
-                     <label for="formGroupExampleInput">Update Allergens to:</label>
-                     <input type="text" name="u_allergens" class="form-control" id="formGroupExampleInput" placeholder="{{user.find_one({'Recipe_name':name }).Details.Allergens}}">
-                      <br>
-                      <label for="formGroupExampleInput">Update Portions Served to:</label>
-                      <input type="text" name="u_portions_served" class="form-control" id="formGroupExampleInput" placeholder="{{user.find_one({'Recipe_name':name }).Details.Portions_served}}">
-                       <br>
-                       <label for="formGroupExampleInput">Update Credits to:</label>
-                       <input type="url" name="u_credits_to" class="form-control" id="formGroupExampleInput" placeholder="{{user.find_one({'Recipe_name':name }).Details.Credits_to}}">
-                        <br>
-                        <label for="formGroupExampleInput">Update Cooking Time to :</label>
-                        <input type="text" name="u_cooking_time_minutes" class="form-control" id="formGroupExampleInput" placeholder="{{user.find_one({'Recipe_name':name }).Cooking_time_minutes}}">
-                         <br>
-                   <label for="formGroupExampleInput">Update ingredients To:</label>
-                   <input type="text" name="u_ingr" class="form-control" id="formGroupExampleInput" placeholder="{{user.find_one({'Recipe_name':name }).Ingredients[0]}}">
-                   <br>
-                   <label for="exampleFormControlTextarea1">Update Description To:</label>
-                   <textarea class="form-control" name="u_description" id="exampleFormControlTextarea1" rows="5"></textarea>
-                   <br>
-                   <input type="submit">
 
-        </form>
+    <h1>{{name}}</h1>
+
+    <!--Recipe update form-->
+    <form method="POST">
+        <div class="form-group col-lg-6">
+            <label for="formGroupExampleInput">Update the recipe to:</label>
+            <input type="text" name="u_recipe" class="form-control" id="formGroupExampleInput" placeholder="{{name}}">
+            <br>
+            <label for="formGroupExampleInput">Update Suitable For to:</label>
+            <input type="text" name="u_suitablefor" class="form-control" id="formGroupExampleInput" placeholder="{{user.find_one({'Recipe_name':name }).Details.Suitable_for}}">
+            <br>
+            <label for="formGroupExampleInput">Update Serves As to:</label>
+            <input type="text" name="u_servesas" class="form-control" id="formGroupExampleInput" placeholder="{{user.find_one({'Recipe_name':name }).Details.Serves_as}}">
+            <br>
+            <label for="formGroupExampleInput">Update Allergens to:</label>
+            <input type="text" name="u_allergens" class="form-control" id="formGroupExampleInput" placeholder="{{user.find_one({'Recipe_name':name }).Details.Allergens}}">
+            <br>
+            <label for="formGroupExampleInput">Update Portions Served to:</label>
+            <input type="text" name="u_portions_served" class="form-control" id="formGroupExampleInput" placeholder="{{user.find_one({'Recipe_name':name }).Details.Portions_served}}">
+            <br>
+            <label for="formGroupExampleInput">Update Credits to:</label>
+            <input type="url" name="u_credits_to" class="form-control" id="formGroupExampleInput" placeholder="{{user.find_one({'Recipe_name':name }).Details.Credits_to}}">
+            <br>
+            <label for="formGroupExampleInput">Update Cooking Time to :</label>
+            <input type="text" name="u_cooking_time_minutes" class="form-control" id="formGroupExampleInput" placeholder="{{user.find_one({'Recipe_name':name }).Cooking_time_minutes}}">
+            <br>
+            <label for="formGroupExampleInput">Update ingredients To:</label>
+            <input type="text" name="u_ingr" class="form-control" id="formGroupExampleInput" placeholder="{{user.find_one({'Recipe_name':name }).Ingredients[0]}}">
+            <br>
+            <label for="exampleFormControlTextarea1">Update Description To:</label>
+            <textarea class="form-control" name="u_description" id="exampleFormControlTextarea1" rows="5"></textarea>
+            <br>
+            <input type="submit">
+        </div>
+    </form>
 </div>
 
 
-    {% endblock %}
+{% endblock %}

@@ -1,19 +1,16 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <!--for loop for templating the recipes list-->
 {% for user in user3%}
 <div class="card find_card">
-        <h5 class="card-header"><em>Bon Apetite!</em></h5>
-        <img src="static/dish.jpg"  class="card-img-top"  alt="Not Available">
-        <div class="card-body">
-           <h5 class="card-title">Ready to cook?</h5>
-           <p class="card-text">Enjoy healthy recipes uploaded every day.</p>
-           <a  class="btn btn-secondary btn-lg btn-block col-lg-8"id="button" href="/results/{{user.Recipe_name}}"><h1>{{user.Recipe_name}}</h1></a>
-        </div>
-         
+    <h5 class="card-header"><em>Bon Apetite!</em></h5>
+    <img src="static/dish.jpg" class="card-img-top" alt="Not Available">
+    <div class="card-body">
+        <h5 class="card-title">Ready to cook?</h5>
+        <p class="card-text">Enjoy healthy recipes uploaded every day.</p>
+        <a class="btn btn-secondary btn-lg btn-block col-lg-8" id="button" href="/results/{{user.Recipe_name}}">
+            <h1>{{user.Recipe_name}}</h1>
+        </a>
+    </div>
+
 </div>
-{%endfor%}
-
-
-
-{% endblock %}
+{%endfor%} {% endblock %}

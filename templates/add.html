@@ -1,38 +1,37 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <div class="jumbotron">
-      <!--Recipe add form-->
-    <form method="POST"  action="/add">
-            <div class="form-group col-lg-6">
-              <label for="formGroupExampleInput">Recipe Name</label>
-              <input type="text" name="Recipe_name" class="form-control" id="formGroupExampleInput" placeholder="Recipe_name">
-               <br>
-               <label for="formGroupExampleInput">Suitable For:</label>
-               <input type="text" name="Suitable_for" class="form-control" id="formGroupExampleInput" placeholder="Suitable For:">
-                <br>
-                <label for="formGroupExampleInput">Serves_as:</label>
-                <input type="text" name="Serves_as" class="form-control" id="formGroupExampleInput" placeholder="Serves As:">
-                 <br>
-                 <label for="formGroupExampleInput">Allergens:</label>
-                 <input type="text" name="Allergens" class="form-control" id="formGroupExampleInput" placeholder="Allergens:">
-                  <br>
-                  <label for="formGroupExampleInput">Portions Served:</label>
-                  <input type="text" name="Portions_served" class="form-control" id="formGroupExampleInput" placeholder="Portions Served:">
-                   <br>
-                   <label for="formGroupExampleInput">Credits To :</label>
-                   <input type="url" name="Credits_to" class="form-control" id="formGroupExampleInput" placeholder="Credits To:">
-                    <br>
-                    <label for="formGroupExampleInput">Cooking Time Minutes :</label>
-                    <input type="text" name="Cooking_time_minutes" class="form-control" id="formGroupExampleInput" placeholder="Cooking Time Minutes:">
-                     <br>
-               <label for="formGroupExampleInput">Ingredients:</label>
-               <input type="text" name="Ingredients" class="form-control" id="formGroupExampleInput" placeholder="Ingredients">
-               <br>
-               <label for="exampleFormControlTextarea1">Description:</label>
-               <textarea class="form-control" name="Description" id="exampleFormControlTextarea1" rows="5"></textarea>
-               <br>
-               <input type="submit">
-            </div>
-  </div>
-          </form>
-    {% endblock %}
+    <!--Recipe add form-->
+    <form method="POST" action="/add">
+        <div class="form-group col-lg-6">
+            <label for="formGroupExampleInput">Recipe Name</label>
+            <input type="text" name="Recipe_name" class="form-control" id="formGroupExampleInput" placeholder="Recipe_name">
+            <br>
+            <label for="formGroupExampleInput">Suitable For:</label>
+            <input type="text" name="Suitable_for" class="form-control" id="formGroupExampleInput" placeholder="Suitable For:">
+            <br>
+            <label for="formGroupExampleInput">Serves_as:</label>
+            <input type="text" name="Serves_as" class="form-control" id="formGroupExampleInput" placeholder="Serves As:">
+            <br>
+            <label for="formGroupExampleInput">Allergens:</label>
+            <input type="text" name="Allergens" class="form-control" id="formGroupExampleInput" placeholder="Allergens:">
+            <br>
+            <label for="formGroupExampleInput">Portions Served:</label>
+            <input type="text" name="Portions_served" class="form-control" id="formGroupExampleInput" placeholder="Portions Served:">
+            <br>
+            <label for="formGroupExampleInput">Credits To :</label>
+            <input type="url" name="Credits_to" class="form-control" id="formGroupExampleInput" placeholder="Credits To:">
+            <br>
+            <label for="formGroupExampleInput">Cooking Time Minutes :</label>
+            <input type="text" name="Cooking_time_minutes" class="form-control" id="formGroupExampleInput" placeholder="Cooking Time Minutes:">
+            <br>
+            <label for="formGroupExampleInput">Ingredients:</label>
+            <input type="text" name="Ingredients" class="form-control" id="formGroupExampleInput" placeholder="Ingredients">
+            <br>
+            <label for="exampleFormControlTextarea1">Description:</label>
+            <textarea class="form-control" name="Description" id="exampleFormControlTextarea1" rows="5"></textarea>
+            <br>
+            <input type="submit">
+        </div>
+    </form>
+</div>
+{% endblock %}
