@@ -2,7 +2,7 @@
 {% block content %}
 <div class="jumbotron">
 
-    <h1>Sort page</h1>
+ 
 
 
 <button type="button" id="Allergens" class="btn btn-primary btn-lg "><h2>No Allergens</h2></button>
@@ -36,5 +36,39 @@
 <h4><strong>Description: </strong>{{user.Description}}</h4>
 {% endfor %}
 </div>
+
+<button type="button" id="cookingtime" class="btn btn-primary btn-lg"><h2>Fast cook meals</h2></button>
+<div id="hideThree" class="hide">
+{% for user in user.find({"Cooking_time_minutes":{"$lt":30 , "$exists":true}})%}
+<br>
+<h3><strong>Recipe Name: </strong>{{user.Recipe_name }}</h3>
+<h4><strong>Suitable For: </strong>{{user.Details.Suitable_for}}</h4>
+<h4><strong>Serves As: </strong>{{user.Details.Serves_as}}</h4>
+<h4><strong>Allergens: </strong>{{user.Details.Allergens}}</h4>
+<h4><strong>Portions Served: </strong>{{user.Details.Portions_served}}</h4>
+<h4><strong>Credits To: </strong>{{user.Details.Credits_to}}</h4>
+<h4><strong>Cooking Time Minutes: </strong>{{user.Cooking_time_minutes}}</h4>
+<h4><strong>Ingredients: </strong>{{user.Ingredients[0]}}</h4>
+<h4><strong>Description: </strong>{{user.Description}}</h4>
+{% endfor %}
+</div>
+
+<button type="button" id="cookingtime" class="btn btn-primary btn-lg"><h2>Vegetariens</h2></button>
+<div id="hideFour" class="hide">
+{% for user in user.find({"Suitable_for":{"$eq":"vegetariens" , "$exists":true}})%}
+<br>
+<h3><strong>Recipe Name: </strong>{{user.Recipe_name }}</h3>
+<h4><strong>Suitable For: </strong>{{user.Details.Suitable_for}}</h4>
+<h4><strong>Serves As: </strong>{{user.Details.Serves_as}}</h4>
+<h4><strong>Allergens: </strong>{{user.Details.Allergens}}</h4>
+<h4><strong>Portions Served: </strong>{{user.Details.Portions_served}}</h4>
+<h4><strong>Credits To: </strong>{{user.Details.Credits_to}}</h4>
+<h4><strong>Cooking Time Minutes: </strong>{{user.Cooking_time_minutes}}</h4>
+<h4><strong>Ingredients: </strong>{{user.Ingredients[0]}}</h4>
+<h4><strong>Description: </strong>{{user.Description}}</h4>
+{% endfor %}
+</div>
+
+
 
 {% endblock %}
