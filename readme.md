@@ -18,11 +18,11 @@ The individual recipe page shows a full description of the recipe with all the c
 Down the page, the user can find an Update button that leads to a form where the user can update the  recipe, just in case there is something that needs updating.The fields are already filled in with the recipe informations.Another button is used to delete the recipe. There is also a "Back" button that navigates back to the "List Page".
 
 Another link on the navbar is "Categories Page" where the user can find the category of recipes in what has a particular interest such as: 
- - Number of portions category,
- - Vegetarians suitable recipes,
- - Fast cook recipes ,
- - the range in what the recipe is served as Desert, Salad, Main course .Also for people susceptible to allergies, based of ingredients , they can find Allergens free recipes.
- Prassing on any button will give the user on the same page, a full description of the recipe within the category provided.
+ - Number of portions category;
+ - Vegetarians suitable recipes;
+ - Fast cook recipes ;
+ - The range in what the recipe is served as Desert, Salad, Main course .Also for people susceptible to allergies, based of ingredients , they can find Allergens free recipes.
+ Pressing on any button will give the user on the same page, a full description of the recipe within the category provided.
 
 Code:
 
@@ -30,7 +30,7 @@ Code:
 I have used for loops and Python conditionals along with Jinja2 for templating. Jinja2 templating was particularly useful for structuring the project aspect.
 
 **MongoDb:**
-The database schema is available in the repository as: Mongodb Flask App Schema.md
+The database schema is available in the repository as: **Schema.md**
 
 **HTML:**
 I have decided to use Bootstrap for responsive design although there is the Materialise option available, I am more comfortable with Bootstrap. 
@@ -41,12 +41,12 @@ I have used CSS to style the app and to add functionality to buttons on sort pag
 **Javascript:**
 I have used event listeners to add functionality to the Category page buttons.They are set to add or remove the "show" and the "hide" class , that have a display:block and a display:none settings.
 
-**Deployment:** I have used an environment variable to deploy the app to Heroku and conceal the MONGO_URI.
+**Deployment:** I have used an environment variable to deploy the app to Heroku and conceal the MONGO_URI.The code has been deployed also on github
 
 
 **Testing:**
 I have tested if the data structure is a valid Json at  https://jsonformatter.org/.
-I have tested the responsivness using Google Developer Dools the provided small devices: Galaxy S5,Pixel2,Pixe2 XL,Iphone 5/SE,Iphone 6/7/8, Iphone 6/7/8 plus, Iphone X,Ipad,Ipad Pro, as well as small , normal and large resolution desktops. 
+I have tested the responsivness using Google Developer Dools the provided small devices: Galaxy S5,Pixel2,Pixe2 XL,Iphone 5/SE,Iphone 6/7/8, Iphone 6/7/8 plus, Iphone X,Ipad,Ipad Pro, as well as small , normal and large resolution desktops.App functionality tested for adding, reading, deleting ,updating operations.
 
 
 Deployed project: https://flaskmongoproject.herokuapp.com/
