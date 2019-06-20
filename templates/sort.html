@@ -19,6 +19,7 @@
         {% endfor %}
     </div>
     <br>
+    <br>
     <button type="button" id="deserts" class="btn btn-primary btn-lg col-lg-8"><h2>Deserts</h2></button>
     <div id="hideTwo" class="hide">
         {% for user in user.find({"Details.Serves_as":{"$regex":"desert" , "$exists":true}})%}
