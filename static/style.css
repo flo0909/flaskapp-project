@@ -4,11 +4,35 @@ body{
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
-
 }
-
 .card{
     opacity: 0.96;
+}
+.wrapper{
+    float:right;
+    text-align:center;
+    margin-top:15%;
+}
+.landing_upper_text{
+    font-size:200%;
+    margin-bottom:3%;
+}
+.landingpage_button{
+    border: 3px solid rgb(54, 17, 17);
+
+}
+.landingpage_button:hover{
+    background-color: rgb(255, 8, 8);
+    color:white;
+}
+.bottom_text{
+    margin-top:3%;
+    text-shadow: 1px 1px 27px 9px #fffefe;
+    font-size:160%;
+}
+.jumbotron{
+    z-index:1;
+    opacity: 0.96;  
 }
 .btn-secondary{
     outline-width: 3px;
