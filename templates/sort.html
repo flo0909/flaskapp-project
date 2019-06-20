@@ -35,7 +35,8 @@
         <h4><strong>Description: </strong>{{user.Description}}</h4>
         {% endfor %}
     </div>
-
+    <br>
+    <br>
     <button type="button" id="salads" class="btn btn-primary btn-lg col-lg-8"><h2>Salads</h2></button>
     <div id="hideThree" class="hide">
         {% for user in user.find({"Details.Serves_as":{"$regex":"salad" , "$exists":true}})%}
@@ -52,7 +53,7 @@
         {% endfor %}
     </div>
     <br>
-
+    <br>
     <button type="button" id="Allergens" class="btn btn-primary btn-lg col-lg-8"><h2>No Allergens</h2></button>
     <div id="hideFour" class="hide">
         {% for user in user.find({"Details.Allergens":{"$eq":"None", "$exists":true}})%}
@@ -68,6 +69,7 @@
         <h4><strong>Description: </strong>{{user.Description}}</h4>
         {% endfor %}
     </div>
+    <br>
     <br>
     <button type="button" id="vegetarians" class="btn btn-primary btn-lg col-lg-8"><h2>Vegetarians</h2></button>
     <div id="hideFive" class="hide">
@@ -85,6 +87,7 @@
         {% endfor %}
     </div>
     <br>
+    <br>
     <button type="button" id="many_portions" class="btn btn-primary btn-lg col-lg-8"><h2>Many portions</h2></button>
     <div id="hideSix" class="hide">
         {% for user in user.find({"Details.Portions_served":{"$ne":"one", "$exists":true}})%}
@@ -101,6 +104,7 @@
         {% endfor %}
     </div>
     <br>
+    <br>
     <button type="button" id="one_portion" class="btn btn-primary btn-lg col-lg-8"><h2>One Portion</h2></button>
     <div id="hideSeven" class="hide">
         {% for user in user.find({"Details.Portions_served":{"$eq":"one", "$exists":true}})%}
@@ -116,6 +120,7 @@
         <h4><strong>Description: </strong>{{user.Description}}</h4>
         {% endfor %}
     </div>
+    <br>
     <br>
     <button type="button" id="cookingtime" class="btn btn-primary btn-lg col-lg-8"><h2>Fast cook meals</h2></button>
     <div id="hideEight" class="hide">
