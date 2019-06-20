@@ -12,7 +12,6 @@ The **DB Schema** that i have followed , looks like this:
 	},
 	"Cooking_time_minutes": int("Cooking_time_minutes"),
 	"Ingredients": ["meat ,condiments, flower, oil"],
-
-	"Description": "Take the meat,put the condiments,fry for 10 minutes"
+	"Description": "Description"
 
 }
