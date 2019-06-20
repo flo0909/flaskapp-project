@@ -6,17 +6,14 @@ from flask_pymongo import PyMongo
 
 app = Flask(__name__)
 
-app.config["MONGO_URI"] = os.environ.get('MONGO_URI')
-
+app.config["MONGO_URI"] = "mongodb://localhost:27017/mydb2"
 app.config['SECRET_KEY'] = 'secret'
 
 mongo = PyMongo(app)
 
-
 @app.route('/')
-@app.route('/index.html')
 def index():
-	return render_template('index.html', user=mongo.db.mydb.find())
+    return render_template('index.html')
     
 
 
@@ -139,8 +136,6 @@ def sort():
     user = mongo.db.users
     sort_results=''
     return render_template('sort.html', user=user, sort_results=sort_results)
-
-
 
 
 if __name__ == '__main__':

@@ -7,12 +7,12 @@
     <h1>{{name}}</h1>
     <h4><strong>Recipe Name:</strong> {{user.find_one({"Recipe_name":name }).Recipe_name}}</h4>
     <h4><strong>Suitable For:</strong> {{user.find_one({"Recipe_name":name }).Details.Suitable_for}}</h4>
-    <h4><strong>Serves As: </strong>{{user.find_one({"Recipe_name":name }).Details.Serves_as}}</h4>
+    <h4><strong>Serves As:</strong> {{user.find_one({"Recipe_name":name }).Details.Serves_as}}</h4>
     <h4><strong>Allergens:</strong> {{user.find_one({"Recipe_name":name }).Details.Allergens}}</h4>
     <h4><strong>Portions Served:</strong> {{user.find_one({"Recipe_name":name }).Details.Portions_served}}</h4>
     <h4><strong>Credits To:</strong> {{user.find_one({"Recipe_name":name }).Details.Credits_to}}</h4>
     <h4><strong>Cooking Time Minutes :</strong> {{user.find_one({"Recipe_name":name }).Cooking_time_minutes}}</h4>
-    <h4><strong>Ingredients:</strong> {{user.find_one({"Recipe_name":name }).Ingredients[0]}}</h4>
+    <h4><strong>Ingredients: </strong>{{user.find_one({"Recipe_name":name }).Ingredients[0]}}</h4>
     <h4><strong>Description :</strong> {{user.find_one({"Recipe_name":name }).Description}}</h4>
 
     <a  class="btn updt"  href="/update/{{user.find_one({'Recipe_name':name }).Recipe_name}}"><h2>Update</h2></a>

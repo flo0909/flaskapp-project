@@ -2,11 +2,57 @@
 {% block content %}
 <div class="jumbotron">
 
- 
+ <button type="button" id="main_course" class="btn btn-primary btn-lg"><h2>Main Course</h2></button>
+<div id="hideOne" class="hide">
+{% for user in user.find({"Details.Serves_as":{"$regex":"main" , "$exists":true}})%}
+<br>
+<h3><strong>Recipe Name: </strong>{{user.Recipe_name }}</h3>
+<h4><strong>Suitable For: </strong>{{user.Details.Suitable_for}}</h4>
+<h4><strong>Serves As: </strong>{{user.Details.Serves_as}}</h4>
+<h4><strong>Allergens: </strong>{{user.Details.Allergens}}</h4>
+<h4><strong>Portions Served: </strong>{{user.Details.Portions_served}}</h4>
+<h4><strong>Credits To: </strong>{{user.Details.Credits_to}}</h4>
+<h4><strong>Cooking Time Minutes: </strong>{{user.Cooking_time_minutes}}</h4>
+<h4><strong>Ingredients: </strong>{{user.Ingredients[0]}}</h4>
+<h4><strong>Description: </strong>{{user.Description}}</h4>
+{% endfor %}
+</div>
+
+<button type="button" id="deserts" class="btn btn-primary btn-lg"><h2>Deserts</h2></button>
+<div id="hideTwo" class="hide">
+{% for user in user.find({"Details.Serves_as":{"$regex":"desert" , "$exists":true}})%}
+<br>
+<h3><strong>Recipe Name: </strong>{{user.Recipe_name }}</h3>
+<h4><strong>Suitable For: </strong>{{user.Details.Suitable_for}}</h4>
+<h4><strong>Serves As: </strong>{{user.Details.Serves_as}}</h4>
+<h4><strong>Allergens: </strong>{{user.Details.Allergens}}</h4>
+<h4><strong>Portions Served: </strong>{{user.Details.Portions_served}}</h4>
+<h4><strong>Credits To: </strong>{{user.Details.Credits_to}}</h4>
+<h4><strong>Cooking Time Minutes: </strong>{{user.Cooking_time_minutes}}</h4>
+<h4><strong>Ingredients: </strong>{{user.Ingredients[0]}}</h4>
+<h4><strong>Description: </strong>{{user.Description}}</h4>
+{% endfor %}
+</div>
+
+<button type="button" id="salads" class="btn btn-primary btn-lg"><h2>Salads</h2></button>
+<div id="hideThree" class="hide">
+{% for user in user.find({"Details.Serves_as":{"$regex":"salad" , "$exists":true}})%}
+<br>
+<h3><strong>Recipe Name: </strong>{{user.Recipe_name }}</h3>
+<h4><strong>Suitable For: </strong>{{user.Details.Suitable_for}}</h4>
+<h4><strong>Serves As: </strong>{{user.Details.Serves_as}}</h4>
+<h4><strong>Allergens: </strong>{{user.Details.Allergens}}</h4>
+<h4><strong>Portions Served: </strong>{{user.Details.Portions_served}}</h4>
+<h4><strong>Credits To: </strong>{{user.Details.Credits_to}}</h4>
+<h4><strong>Cooking Time Minutes: </strong>{{user.Cooking_time_minutes}}</h4>
+<h4><strong>Ingredients: </strong>{{user.Ingredients[0]}}</h4>
+<h4><strong>Description: </strong>{{user.Description}}</h4>
+{% endfor %}
+</div>
 
 
 <button type="button" id="Allergens" class="btn btn-primary btn-lg "><h2>No Allergens</h2></button>
-<div id="hideOne" class="hide">
+<div id="hideFour" class="hide">
 {% for user in user.find({"Details.Allergens":{"$eq":"None", "$exists":true}})%}
 <br>
 <h3><strong>Recipe Name: </strong>{{user.Recipe_name }}</h3>
@@ -21,8 +67,24 @@
 {% endfor %}
 </div>
 
-<button type="button" id="Portions_served" class="btn btn-primary btn-lg "><h2>Many portions</h2></button>
-<div id="hideTwo" class="hide">
+<button type="button" id="vegetarians" class="btn btn-primary btn-lg"><h2>Vegetarians</h2></button>
+<div id="hideFive" class="hide">
+{% for user in user.find({"Details.Suitable_for":{"$eq":"vegetarians" , "$exists":true}})%}
+<br>
+<h3><strong>Recipe Name: </strong>{{user.Recipe_name }}</h3>
+<h4><strong>Suitable For: </strong>{{user.Details.Suitable_for}}</h4>
+<h4><strong>Serves As: </strong>{{user.Details.Serves_as}}</h4>
+<h4><strong>Allergens: </strong>{{user.Details.Allergens}}</h4>
+<h4><strong>Portions Served: </strong>{{user.Details.Portions_served}}</h4>
+<h4><strong>Credits To: </strong>{{user.Details.Credits_to}}</h4>
+<h4><strong>Cooking Time Minutes: </strong>{{user.Cooking_time_minutes}}</h4>
+<h4><strong>Ingredients: </strong>{{user.Ingredients[0]}}</h4>
+<h4><strong>Description: </strong>{{user.Description}}</h4>
+{% endfor %}
+</div>
+
+<button type="button" id="many_portions" class="btn btn-primary btn-lg "><h2>Many portions</h2></button>
+<div id="hideSix" class="hide">
 {% for user in user.find({"Details.Portions_served":{"$ne":"one", "$exists":true}})%}
 <br>
 <h3><strong>Recipe Name: </strong>{{user.Recipe_name }}</h3>
@@ -37,8 +99,24 @@
 {% endfor %}
 </div>
 
+<button type="button" id="one_portion" class="btn btn-primary btn-lg "><h2>One Portion</h2></button>
+<div id="hideSeven" class="hide">
+{% for user in user.find({"Details.Portions_served":{"$eq":"one", "$exists":true}})%}
+<br>
+<h3><strong>Recipe Name: </strong>{{user.Recipe_name }}</h3>
+<h4><strong>Suitable For: </strong>{{user.Details.Suitable_for}}</h4>
+<h4><strong>Serves As: </strong>{{user.Details.Serves_as}}</h4>
+<h4><strong>Allergens: </strong>{{user.Details.Allergens}}</h4>
+<h4><strong>Portions Served: </strong>{{user.Details.Portions_served}}</h4>
+<h4><strong>Credits To: </strong>{{user.Details.Credits_to}}</h4>
+<h4><strong>Cooking Time Minutes: </strong>{{user.Cooking_time_minutes}}</h4>
+<h4><strong>Ingredients: </strong>{{user.Ingredients[0]}}</h4>
+<h4><strong>Description: </strong>{{user.Description}}</h4>
+{% endfor %}
+</div>
+
 <button type="button" id="cookingtime" class="btn btn-primary btn-lg"><h2>Fast cook meals</h2></button>
-<div id="hideThree" class="hide">
+<div id="hideEight" class="hide">
 {% for user in user.find({"Cooking_time_minutes":{"$lt":30 , "$exists":true}})%}
 <br>
 <h3><strong>Recipe Name: </strong>{{user.Recipe_name }}</h3>
@@ -53,21 +131,11 @@
 {% endfor %}
 </div>
 
-<button type="button" id="cookingtime" class="btn btn-primary btn-lg"><h2>Vegetariens</h2></button>
-<div id="hideFour" class="hide">
-{% for user in user.find({"Suitable_for":{"$eq":"vegetarians" , "$exists":true}})%}
-<br>
-<h3><strong>Recipe Name: </strong>{{user.Recipe_name }}</h3>
-<h4><strong>Suitable For: </strong>{{user.Details.Suitable_for}}</h4>
-<h4><strong>Serves As: </strong>{{user.Details.Serves_as}}</h4>
-<h4><strong>Allergens: </strong>{{user.Details.Allergens}}</h4>
-<h4><strong>Portions Served: </strong>{{user.Details.Portions_served}}</h4>
-<h4><strong>Credits To: </strong>{{user.Details.Credits_to}}</h4>
-<h4><strong>Cooking Time Minutes: </strong>{{user.Cooking_time_minutes}}</h4>
-<h4><strong>Ingredients: </strong>{{user.Ingredients[0]}}</h4>
-<h4><strong>Description: </strong>{{user.Description}}</h4>
-{% endfor %}
-</div>
+
+
+
+
+
 
 
 

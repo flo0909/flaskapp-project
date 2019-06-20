@@ -6,3 +6,31 @@ body{
     background-size: cover;
 
 }
+.hide{
+    display:none;
+}
+.show{
+    display:block;
+}
+.card{
+    opacity: 0.96;
+}
+.btn-secondary{
+    outline-width: 3px;
+    outline-color: rgb(255, 255, 255);
+    box-shadow: -1px 1px 3px 2px rgb(53, 52, 52);
+    background-color: rgb(54, 17, 17);  
+}
+.btn-secondary:hover{
+    background-color:rgb(121, 56, 56);
+}
+.btn-primary{
+   border-color: rgb(176, 187, 174);
+   box-shadow: -1px 1px 3px 2px rgb(53, 52, 52);
+   background-color:rgb(71, 19, 19);
+   min-width:65vw
+}
+.btn-primary:hover{
+    background-color:rgb(121, 56, 56);
+    outline-color:rgb(170, 167, 179);
+}
