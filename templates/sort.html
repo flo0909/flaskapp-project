@@ -55,7 +55,7 @@
 
 <button type="button" id="cookingtime" class="btn btn-primary btn-lg"><h2>Vegetariens</h2></button>
 <div id="hideFour" class="hide">
-{% for user in user.find({"Suitable_for":{"$eq":"vegetariens" , "$exists":true}})%}
+{% for user in user.find({"Suitable_for":{"$eq":"vegetarians" , "$exists":true}})%}
 <br>
 <h3><strong>Recipe Name: </strong>{{user.Recipe_name }}</h3>
 <h4><strong>Suitable For: </strong>{{user.Details.Suitable_for}}</h4>
