@@ -1,91 +1,154 @@
-body{
-    background-image: url('/static/dish9.jpeg');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    background-size: cover;
+/* settings for background image */
+html, body {
+    height: 100%;
 }
-.card{
-    opacity: 0.96;
+html {
+ overflow-y: hidden;
+}
+body {
+overflow-y: scroll;
+}
+body {
+background:url('/static/dish9.jpeg') no-repeat center fixed;
+background-size: cover;
+}
+/* main div for the landing page */
+.wrapper{
+float:right;
+text-align:center;
+margin-top:10%;
+}
+.landing_upper_text{
+font-size:200%;
+margin-bottom:3%;
+}
+.landingpage_button{
+border: 3px solid rgb(54, 17, 17);
+
+}
+.landingpage_button:hover{
+background-color: rgb(255, 8, 8);
+color:white;
+}
+.bottom_text{
+margin-top:3%;
+text-shadow: 1px 1px 27px 9px #fffefe;
+font-size:150%;
+}
+.jumbotron{
+z-index:1;
+opacity: 0.96;  
+}
+/* classes for sort page buttons using Javascript */
+.hide{
+display:none;
+}
+.show{
+display:block;
+}
+
+.find_card{
+opacity: 0.97;
+}
+.btn-secondary{
+outline-width: 3px;
+outline-color: rgb(255, 255, 255);
+box-shadow: -1px 1px 3px 2px rgb(53, 52, 52);
+background-color: rgb(54, 17, 17);  
+}
+.btn-secondary:hover{
+background-color:rgb(121, 56, 56);
+}
+.btn-primary{
+border-color: rgb(176, 187, 174);
+box-shadow: -1px 1px 3px 2px rgb(53, 52, 52);
+background-color:rgb(71, 19, 19);
+}
+.btn-primary:hover{
+background-color:rgb(121, 56, 56);
+outline-color:rgb(170, 167, 179);
+}
+.navbar {
+opacity: 0.97;
+background-color:rgb(54, 17, 17);
+outline-width: 5px;
+outline-color: rgb(0, 0, 0);
+box-shadow: inset -1px -1px 7px 0px rgba(255,255,255,1); 
+}
+.navbar-nav{
+margin-left:5%; 
+}
+.navbar-brand{
+color:white;
+}
+.navbar-brand:hover{
+color:rgb(251, 255, 24);
+}
+.navbar-brand:hover{
+color:rgb(226, 226, 226);
+}
+.nav-item{
+color:white;
+font-size:15px; 
+}
+.nav-item:hover{
+color:rgb(189, 185, 185);
+}
+.form-control{
+border-color: rgb(122, 122, 122);
+}
+.footer {
+position: fixed;
+bottom: 0;
+width: 100%;
+background-color:rgb(43, 8, 8);
+color: white;
+text-align: center;
+}
+.delete{
+ background-color: rgb(218, 22, 22);
+ color:rgb(245, 244, 244);
+}
+.delete:hover{
+background-color: rgb(255, 11, 11);
+color:white;
+}
+.updt{
+background-color: rgb(63, 58, 80);
+color:rgb(233, 231, 231);
+
+}
+.updt:hover{
+background-color: rgb(108, 103, 126);
+color:white;
+}
+.back{
+background-color: rgb(54, 17, 17);
+color:rgb(228, 225, 225);
+}
+.back:hover{
+background-color: rgb(133, 45, 45);
+color:white;
+}
+.fontaws{
+margin-top:10px;
+}
+.footer-text{
+font-size:15px;
+line-height:20px;
+margin:0px;
+padding:0;
+}
+/* media query for sizing landing page text to fit smaller sized screens on android */
+@media only screen and (max-height: 458px) {
+.bottom_text{
+    margin-top:3%;
+    text-shadow: 1px 1px 27px 9px #fffefe;
+    font-size:100%;
 }
 .wrapper{
     float:right;
     text-align:center;
-    margin-top:15%;
+    margin:0;
 }
-.landing_upper_text{
-    font-size:200%;
-    margin-bottom:3%;
-}
-.landingpage_button{
-    border: 3px solid rgb(54, 17, 17);
-
-}
-.landingpage_button:hover{
-    background-color: rgb(255, 8, 8);
-    color:white;
-}
-.bottom_text{
-    margin-top:3%;
-    text-shadow: 1px 1px 27px 9px #fffefe;
-    font-size:160%;
-}
-.jumbotron{
-    z-index:1;
-    opacity: 0.96;  
-}
-.btn-secondary{
-    outline-width: 3px;
-    outline-color: rgb(255, 255, 255);
-    box-shadow: -1px 1px 3px 2px rgb(53, 52, 52);
-    background-color: rgb(54, 17, 17);  
-}
-.btn-secondary:hover{
-    background-color:rgb(121, 56, 56);
-}
-.btn-primary{
-   border-color: rgb(176, 187, 174);
-   box-shadow: -1px 1px 3px 2px rgb(53, 52, 52);
-   background-color:rgb(71, 19, 19);
-   min-width:65vw
-}
-.btn-primary:hover{
-    background-color:rgb(121, 56, 56);
-    outline-color:rgb(170, 167, 179);
-}
-.navbar {
-    opacity: 0.97;
-    background-color:rgb(54, 17, 17);
-    outline-width: 5px;
-    outline-color: rgb(0, 0, 0);
-    box-shadow: inset -1px -1px 7px 0px rgba(255,255,255,1); 
-}
-.navbar-nav{
-    margin-left:5%;   
-}
-.navbar-brand{
-    color:white;
-    font-size:25px;   
-}
-.navbar-brand:hover{
-    color:rgb(226, 226, 226);
-}
-.nav-item{
-    color:white;
-    font-size:15px;  
-}
-.nav-item:hover{
-    color:rgb(189, 185, 185);
-}
-.delete{
-    background-color: rgb(218, 22, 22);
-    color:white;
-}
-.updt{
-   background-color: rgb(81, 77, 97);
-   color:white;
-}
-.back{
-   background-color: rgb(54, 17, 17);
-   color:white;
 }
