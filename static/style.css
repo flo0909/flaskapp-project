@@ -31,9 +31,8 @@ background-color: rgb(255, 8, 8);
 color:white;
 }
 .bottom_text{
-margin-top:3%;
-text-shadow: 1px 1px 27px 9px #fffefe;
-font-size:150%;
+color:black;
+font-size:180%;
 }
 .jumbotron{
 z-index:1;
@@ -54,18 +53,20 @@ opacity: 0.97;
 outline-width: 3px;
 outline-color: rgb(255, 255, 255);
 box-shadow: -1px 1px 3px 2px rgb(53, 52, 52);
-background-color: rgb(54, 17, 17);  
+background-color: rgb(54, 17, 17);
+margin-bottom:30px;  
 }
 .btn-secondary:hover{
-background-color:rgb(121, 56, 56);
+background-color:rgb(20, 4, 4);
 }
 .btn-primary{
 border-color: rgb(176, 187, 174);
 box-shadow: -1px 1px 3px 2px rgb(53, 52, 52);
 background-color:rgb(71, 19, 19);
+
 }
 .btn-primary:hover{
-background-color:rgb(121, 56, 56);
+background-color:rgb(20, 4, 4);
 outline-color:rgb(170, 167, 179);
 }
 .navbar {
@@ -136,7 +137,7 @@ margin-top:10px;
 .footer-text{
 font-size:15px;
 line-height:20px;
-margin:0px;
+margin:0;
 padding:0;
 }
 /* media query for sizing landing page text to fit smaller sized screens on android */
