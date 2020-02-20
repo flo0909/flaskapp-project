@@ -15,10 +15,10 @@
     <h4><strong>Ingredients: </strong>{{user.find_one({"Recipe_name":name }).Ingredients[0]}}</h4>
     <h4><strong>Description :</strong> {{user.find_one({"Recipe_name":name }).Description}}</h4>
 
-    <a class="btn updt" href="/update/{{user.find_one({'Recipe_name':name }).Recipe_name}}">
+    <a class="btn updt disabled" href="/update/{{user.find_one({'Recipe_name':name }).Recipe_name}}">
         <h4>Update</h4>
     </a>
-    <a class="btn delete" id="delete" href="/recipe/{{user.find_one({'Recipe_name':name }).Recipe_name}}">
+    <a class="btn delete disabled" id="delete" href="/recipe/{{user.find_one({'Recipe_name':name }).Recipe_name}}">
         <h4>Delete</h4>
     </a>
     <a class="btn back" id="back" href="{{url_for('find')}}">
